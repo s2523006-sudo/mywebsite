@@ -1,0 +1,374 @@
+html {
+    scroll-behavior: smooth; 
+    /* ★追加：リンクで飛んだときに、メニューの高さ分だけ手前で止まるようにする設定 */
+    scroll-padding-top: 55px; 
+}
+body{
+    background-color: bisque;
+}
+section {
+    padding: 60px 20px; /* 上下60px、左右20pxの余白 */
+    max-width: 1000px;  /* 全体の幅が広がりすぎないように制限 */
+    margin: 0 auto;     /* 画面の中央に配置 */
+}
+/* =========================================
+   ベース設定（背景色やスムーススクロール）
+========================================= */
+html {
+    /* メニューを押したときに「スッと」滑らかに移動する設定 */
+    scroll-behavior: smooth; 
+}
+
+/* =========================================
+   お知らせ（news）とアクセス（access）のロゴ中央揃え
+========================================= */
+/* セクション全体を中央揃えにする */
+#main-news,
+#main-access {
+    text-align: center;
+}
+
+/* セクションの直下にある画像（ロゴ）を中央に配置する */
+#main-news > img {
+    display: block;
+    margin: 0 auto 20px auto; /* 画像を中央寄せし、下の見出しとの間に20pxの余白を作る */
+    max-width: 100%;
+    height: auto;
+}
+#main-access > img {
+    display: block;
+    margin: 0 auto 20px auto; /* 画像を中央寄せし、下の見出しとの間に20pxの余白を作る */
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* 高級感のある明朝体を指定（本格的な雰囲気がでます） */
+    font-family: "Yu Mincho", "Noto Serif JP", serif;
+    color: #333;
+    background-color: #faf9f5; /* 真っ白ではなく、ほんの少し温かみのある白 */
+}
+h2 {
+    text-align: center;
+    color: #72525c;
+    font-size: 28px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #fbeed5; /* 見出しの下にさりげないラインを引く */
+    padding-bottom: 10px;
+    display: inline-block; /* ラインの長さを文字幅に合わせる */
+}
+/* =========================================
+   ヘッダー部分（背景色と横並び）
+========================================= */
+header {
+    background-color: #fbeed5; /* 画像のような温かみのあるクリーム色 */
+    display: flex; /* 横並びにする呪文 */
+    justify-content: space-between; /* 両端に配置する */
+    align-items: center; /* 縦方向の中央揃え */
+    padding: 20px 50px; /* 上下20px 左右50px の余白 */
+}
+header img {
+    height: 60px;        /* 画像の高さを60画素に制限（好みの大きさに調整してください） */
+    width: auto;         /* 横幅は高さに合わせて自動で縮小（縦横比を崩さない） */
+    object-fit: contain; /* 枠内に綺麗に収めるための設定 */
+}
+
+.header-right {
+    text-align: right; /* 右側の文字を右揃えに */
+}
+
+.header-right h3 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.header-right h2 {
+    margin: 5px 0;
+    font-size: 26px;
+    color: #5a4046; /* 文字色を少し茶色っぽく */
+}
+
+/* =========================================
+   ナビゲーションメニュー（横並び）
+========================================= */
+.event-grid img:hover {
+    transform: scale(1.03); /* 画像が3%だけフワッと拡大する */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* 影を濃くして浮き上がったように見せる */
+}
+
+nav {
+    background-color: #72525c; /* 画像の紫がかった茶色の背景 */
+    position: sticky;  /* スクロールしたときに画面に張り付かせる呪文 */
+    top: 0;            /* 画面の一番上（0の位置）で固定する */
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex; /* 横並びにする呪文 */
+    justify-content: center; /* 中央に配置 */
+    list-style: none; /* 行頭の黒丸を消す */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    width: 16%; /* 均等な幅にする */
+    text-align: center;
+}
+
+nav ul li a {
+    display: block;
+    color: #fff; /* 文字色を白に */
+    text-decoration: none; /* リンクの下線を消す */
+    padding: 15px 0; /* 上下の余白（ボタンの高さ） */
+    font-size: 16px;
+}
+
+/* マウスを乗せたときに少し色を変える（クリックできることが分かりやすい） */
+nav ul li a:hover {
+    background-color: #5a4046; 
+}
+
+/* =========================================
+   イベント画像（3列に並べる）
+========================================= */
+#main-event {
+    text-align: center; /* タイトルを中央寄せ */
+    padding: 40px 20px;
+}
+#main-event {
+    text-align: center;
+}
+
+.event-grid {
+    display: grid;
+    /* 画像が4枚なので、PCでは2列×2行、スマホでは1列に自動でなる便利な書き方 */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px;
+}
+
+.event-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px; /* 角を少し丸くして柔らかい印象に */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ふんわりとした影をつける */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* アニメーションの準備 */
+}
+
+#main-event h2 {
+    color: #72525c;
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px; 
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.event-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+footer {
+    background-color: #72525c; /* ナビゲーションと同じ色で統一 */
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px; /* 上の要素との間に少し隙間を空ける */
+}
+
+footer h3 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 14px;
+    letter-spacing: 1px; /* 文字の間隔を少し空けてオシャレに */
+}
+
+.access_map iframe {
+    width: 100%; /* 画面幅に合わせて自動調整 */
+    max-width: 600px;
+    height: 450px;
+    display: block;
+    margin: 0 auto; /* 中央寄せ */
+}
+/* =========================================
+   1. コンセプト・アクセスの違和感を解消（中央揃え）
+========================================= */
+/* コンセプトセクション全体を中央揃えにする */
+#main-concept {
+    text-align: center;
+}
+#main-concept img {
+    display: block;
+    margin: 30px auto;   /* 画像を中央寄せにし、上下に余白を作る */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;  /* 写真の角を少し丸くする */
+}
+#main-concept p {
+    font-size: 16px;
+    line-height: 1.8;    /* 行間を広げて読みやすくする */
+    margin-bottom: 50px; /* 文章の下にゆとりを持たせる */
+}
+
+/* アクセスセクション（前回修正した main-access）も中央揃えにする */
+#main-access {
+    text-align: center;
+}
+#main-access h3 {
+    margin: 15px 0;
+    font-size: 16px;
+    font-weight: normal; /* 太字を解除してすっきりさせる */
+}
+#main-access img {
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+/* =========================================
+   2. メニュー表のスタイリッシュな横並びレイアウト
+========================================= */
+#main-menu {
+    text-align: center;
+}
+#main-menu > img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* メニューの白いカード型ボックス */
+.menu-container {
+    display: flex;          /* 写真と文字を横並びにする */
+    align-items: center;    /* 上下の中央を揃える */
+    justify-content: center;/* 左右の中央に寄せる */
+    gap: 50px;              /* 写真と文字の間の隙間 */
+    margin-bottom: 40px;    /* カードとカードの間の隙間 */
+    background: #ffffff;    /* ボックスの背景を白にする */
+    padding: 30px;
+    border-radius: 12px;    /* ボックスの角を丸くする */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); /* ほんのり上品な影をつける */
+    text-align: left;       /* ボックス内の文字は左揃えにして読みやすく */
+}
+
+/* ★オシャレ技：偶数番目のメニュー（ピザとドリンク）は左右を反転させる */
+.menu-container:nth-of-type(even) {
+    flex-direction: row-reverse;
+}
+
+/* メニューの写真 */
+.menu-container img {
+    width: 45%;             /* 横幅をボックスの45%に制限 */
+    height: 220px;
+    object-fit: cover;      /* 縦横比を崩さずに綺麗に切り抜く */
+    border-radius: 8px;
+}
+
+/* メニューのテキストエリア */
+.menu-list-box {
+    width: 45%;             /* 横幅をボックスの45%に制限 */
+}
+
+.menu-list-box h3 {
+    color: #72525c;         /* テーマカラーの紫茶色 */
+    font-size: 20px;
+    margin-top: 0;
+    border-bottom: 2px dashed #fbeed5; /* ジャンル名の下に可愛い点線を引く */
+    padding-bottom: 8px;
+}
+
+.menu-list-box ul {
+    list-style-type: none;  /* 行頭の黒丸を消す */
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list-box ul li {
+    padding: 12px 0;
+    font-size: 15px;
+    border-bottom: 1px solid #f9f9f9; /* メニューごとの薄い区切り線 */
+}
+
+.menu-list-box ul li:last-child {
+    border-bottom: none;    /* 一番最後の線の消去 */
+}
+
+.shop-info {
+    max-width: 500px; /* 表が広がりすぎないように制限 */
+    margin: 30px auto 50px auto; /* 中央寄せし、上下に余白 */
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse; /* 表の隙間をなくす */
+    text-align: left; /* 文字を左揃えにして読みやすく */
+}
+
+.info-table th {
+    width: 30%; /* 見出し（住所など）の幅 */
+    padding: 15px;
+    border-bottom: 1px solid #e0dcd5; /* 薄いグレーの区切り線 */
+    color: #72525c; /* テーマカラーの紫茶色 */
+    font-weight: bold;
+}
+
+.info-table td {
+    width: 70%; /* 内容の幅 */
+    padding: 15px;
+    border-bottom: 1px solid #e0dcd5;
+    line-height: 1.6;
+}
+
+/* =========================================
+   ご予約ブロック（CTA）のデザイン
+========================================= */
+.reserve-cta {
+    background-color: #fbeed5; /* ヘッダーと同じ温かみのあるクリーム色 */
+    padding: 40px;
+    border-radius: 12px; /* 角を丸く */
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* ほんのり影をつける */
+}
+
+.reserve-cta h3 {
+    margin-top: 0;
+    color: #72525c;
+    font-size: 22px;
+}
+
+.reserve-cta .tel-number {
+    font-size: 32px; /* 電話番号を大きく目立たせる */
+    font-weight: bold;
+    color: #5a4046;
+    margin: 15px 0 25px 0;
+    letter-spacing: 2px; /* 数字の間隔を少し開けてスタイリッシュに */
+}
+
+/* 予約ボタンのデザイン */
+.btn-reserve {
+    display: inline-block;
+    background-color: #72525c; /* ナビゲーションと同じ色 */
+    color: #ffffff;
+    padding: 18px 40px;
+    border-radius: 50px; /* 角を完全に丸くしてボタンらしく */
+    text-decoration: none; /* リンクの下線を消す */
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease; /* ふんわり変化させるアニメーション */
+    box-shadow: 0 4px 6px rgba(114, 82, 92, 0.3); /* ボタンに影をつける */
+}
+
+/* マウスを乗せたときのアクション */
+.btn-reserve:hover {
+    background-color: #5a4046; /* 少し濃い色にする */
+    transform: translateY(-2px); /* ほんの少し上にフワッと浮く */
+    box-shadow: 0 6px 12px rgba(114, 82, 92, 0.4); /* 浮いた分、影を濃くする */
+}
